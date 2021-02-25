@@ -52,7 +52,7 @@ void print_answer(vector <ans> &solution){
     for(auto itr= solution.begin();itr!=solution.end();itr++){
         cout<<itr->id<<"\n";
         cout<<itr->sections.size()<<"\n";
-        for(auto itr2 = itr->sections.begin();itr2!=itr->sections.end()){
+        for(auto itr2 = itr->sections.begin();itr2!=itr->sections.end();itr2++){
             cout<<itr2->first<<" ";
             cout<<itr2->second<<"\n";
         }

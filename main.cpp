@@ -11,22 +11,52 @@ void read_input(){
 }
 
 
-void simulation(int I,map<string,vector<int>> &streets){
-    vector<vector<pair<string,int>>> intersections(I);
+
+struct intersection
+{
+	vector <string> in;
+	vector <int> id;
+};
+
+
+struct ans{
+	int id;
+	vector<pair<string,int>> sections;
+};
+
+
+void simulation(int I,int D,vector<pair<int,vector<string>>> &cars,map<string,vector<int>> &streets){
+    vector <intersection> intersections(I);
     
+    vector <ans> solution;
+
+    int cur_time=0;
+    for (int i=0;i<cars.size();i++){
+    	intersections[i].id.push_back(streets[cars[i].second[0]][1]);
+    	intersections[i].in.push_back(cars[i].second[0]);//  string pushed
+    }
+  
+    while(cur_time<D){
+    	for (int i=0;i<intersections.size();i++){
+    		
+    	}
+    	cur_time++;
+    }
+
+    print_answer(solution);
 
 }
 
-void print_answer(vector<pair<pair<int,int>,vector<pair<string,int>>>> &answer){
-    cout<<answer.size();//intersections
-        for(auto itr = answer.begin();itr!=answer.end();itr++){
-            cout<<itr->first.first<<"\n";
-            cout<<itr->first.second<<"\n";
-            for(int i =0;i<itr->first.second;i++){
-                cout<<itr->second[i].first<<" ";
-                cout<<itr->second[i].second<<"\n";
-            }
+void print_answer(vector <ans> &solution){
+    cout<<solution.size()<<"\n";
+    for(auto itr= solution.begin();itr!=solution.end();itr++){
+        cout<<itr->id<<"\n";
+        cout<<itr->sections.size()<<"\n";
+        for(auto itr2 = itr->sections.begin();itr2!=itr->sections.end()){
+            cout<<itr2->first<<" ";
+            cout<<itr2->second<<"\n";
         }
+    }
 }
 
 
@@ -79,8 +109,7 @@ int main(){
     
 
     auto timetaken = time_calc(streets,cars);
-    simulation(I);
-    print_answer(answer);
+    simulation(I,D,cars,streets);
     return 0;
 }
 

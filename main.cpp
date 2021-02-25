@@ -11,15 +11,23 @@ void read_input(){
 
 int main(){
     read_input();
-    int D,I,S,V,F,B,E,L;
-    string name;
+    int D,I,S,V,F;
     cin>>D>>I>>S>>V>>F;
     int temps = S,tempv=V;
-    while(temps--){
-        
+    map<string,vector<int>> streets;
+
+    while(temps--){//streets
+        int B,E,L;
+        string name;
+        cin>>B>>E>>name>>L;
+        vector<int> temp;
+        temp.push_back(B);
+        temp.push_back(E);
+        temp.push_back(L);
+        streets.insert({name,temp})
     }
-    while(tempv--){
-        
+    while(tempv--){//car paths
+
     }
     return 0;
 }

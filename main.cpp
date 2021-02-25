@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
+using namespace std;
 
 void read_input(){
   #ifndef ONLINE_JUDGE
@@ -15,8 +16,9 @@ int main(){
     cin>>D>>I>>S>>V>>F;
     int temps = S,tempv=V;
     map<string,vector<int>> streets;
-
-    while(temps--){//streets
+    vector<pair<int,vector<string>>> cars;
+    
+    while(temps--){//input streets
         int B,E,L;
         string name;
         cin>>B>>E>>name>>L;
@@ -24,10 +26,23 @@ int main(){
         temp.push_back(B);
         temp.push_back(E);
         temp.push_back(L);
-        streets.insert({name,temp})
+        streets.insert({name,temp});
     }
-    while(tempv--){//car paths
 
+
+    while(tempv--){//input car paths
+        int P;
+        cin>>P;
+        vector<string> names;
+        int temp = P;
+        while(temp--){
+            string name;
+            cin>>name;
+            names.push_back(name);
+        }
+        cars.push_back(make_pair(P,names));
     }
+    
+    
     return 0;
 }

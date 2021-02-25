@@ -43,6 +43,30 @@ int main(){
         cars.push_back(make_pair(P,names));
     }
     
-    
+/**     checking output remove befor submission
+    for (auto itr = streets.begin(); itr != streets.end(); ++itr) {  
+        cout<<itr->first;
+        cout<<" ";
+        for(auto itr2 = itr->second.begin();itr2!=itr->second.end();itr2++){
+            cout<<*itr2<<" ";
+        }
+        cout<<"\n";
+    } 
+   
+
+
+    cout<<"ok input";
+
+    for (auto itr = cars.begin(); itr != cars.end(); ++itr) {  
+        cout<<itr->first;
+        cout<<" ";
+        for(auto itr2 = itr->second.begin();itr2!=itr->second.end();itr2++){
+            cout<<*itr2<<" ";
+        }
+        cout<<"\n";
+    } 
+**/
+
+
     return 0;
 }
